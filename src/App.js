@@ -7,8 +7,9 @@ function App() {
 		<>
 			<Switch>
 				<Route path = '/' component = {Home}/>
-			</Switch>
+			</Switch>		
 		</>)
 }
+
 
 export default App;

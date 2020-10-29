@@ -5,35 +5,22 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { createStore } from "redux";
-
-const initialState = {
-	count : 1
-}
-
-
-const rootReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case 'INCREMENT' : 
-			return state.count + 1;
-		default : 
-			return state;
-	}
-}
+import rootReducer from './reducers/rootReducer';
+import { Provider } from "react-redux";
 
 const store = createStore(rootReducer,
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 store.subscribe(() => console.log(store.getState()))
-store.dispatch({type : 'INCREMENT'})
-store.dispatch({type : 'INCREMENT'})
-store.dispatch({type : 'INCREMENT'})
-store.dispatch({type : 'INCREMENT'})
+
 
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<App />
+			<Provider store = {store}>
+				<App />
+			</Provider>
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")
