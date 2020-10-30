@@ -12,10 +12,10 @@ const Home = props => {
 		fetch('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/profileicon.json')
 			.then(item => item.json())
 			.then(item => {
-				setTimeout(()=> {setDataFromWeb(item)}, 3000);
-				console.log(dataFromWeb);
+				setDataFromWeb(item);
 				;
-			});
+			})
+			.catch(err => console.log(err));
 	}, [])
 	
 	return (
@@ -24,8 +24,15 @@ const Home = props => {
 			<TextField></TextField>
 			<Button variant = 'contained' onClick = {onClickHandler}>Submit</Button>
 			<Button onClick = {props.onAdd}>let add 1 to couner</Button>
-			<Grid item container spacing = {2} xs ={10} md = {8}>
-				{}
+			<Grid item container spacing = {1} xs ={12} md = {10}>
+				{(dataFromWeb != undefined) &&
+				Object.keys(dataFromWeb.data).map(id => {
+					const path = `http://ddragon.leagueoflegends.com/cdn/10.22.1/img/profileicon/${id}.png`
+					return (
+						<img src = {path} style = {{width: '50px'}}></img>
+					)
+				})
+				}
 			</Grid>
 		</Grid>)
 }
