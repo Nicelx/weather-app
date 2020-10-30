@@ -1,17 +1,32 @@
 import { TextField, Typography, Grid, Button } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 const Home = props => {
+	const API_LOL = 'RGAPI-376d91d1-e92d-44ce-9176-a295a6b6c528'
 	const onClickHandler = () => {
 		console.log(props)
 	}
+	const [dataFromWeb, setDataFromWeb] = useState({})
+	useEffect(()=> {
+		fetch('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/profileicon.json')
+			.then(item => item.json())
+			.then(item => {
+				setTimeout(()=> {setDataFromWeb(item)}, 3000);
+				console.log(dataFromWeb);
+				;
+			});
+	}, [])
+	
 	return (
-		<Grid container direction = "column" spacing = {2} xs ='12' alignItems="center">
+		<Grid container direction = "column" spacing = {2} alignItems="center">
 			<Typography variant = 'h3'>Enter the city</Typography>
 			<TextField></TextField>
-			<Button onClick = {onClickHandler}>Submit</Button>
-			<Button onClick = {props.onConsole}>let add 1 to couner</Button>
+			<Button variant = 'contained' onClick = {onClickHandler}>Submit</Button>
+			<Button onClick = {props.onAdd}>let add 1 to couner</Button>
+			<Grid item container spacing = {2} xs ={10} md = {8}>
+				{}
+			</Grid>
 		</Grid>)
 }
 
@@ -24,7 +39,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		onAdd: () => dispatch({type:'INCREMENT'}),
-		onConsole: () =>dispatch({type:'ONC'})
 	}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
