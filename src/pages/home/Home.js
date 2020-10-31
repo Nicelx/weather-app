@@ -3,16 +3,18 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 const Home = props => {
-	const API_LOL = 'RGAPI-376d91d1-e92d-44ce-9176-a295a6b6c528'
+	const weatherApi = 'ceed5aa3a57f8964a59eb9da254e1738'
 	const onClickHandler = () => {
 		console.log(props)
 	}
 	const [dataFromWeb, setDataFromWeb] = useState({})
+	const city = 'Moscow';
 	useEffect(()=> {
-		fetch('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/profileicon.json')
+		fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}&units=metric`)
 			.then(item => item.json())
 			.then(item => {
 				setDataFromWeb(item);
+				console.log(item);
 				;
 			})
 			.catch(err => console.log(err));
@@ -25,14 +27,14 @@ const Home = props => {
 			<Button variant = 'contained' onClick = {onClickHandler}>Submit</Button>
 			<Button onClick = {props.onAdd}>let add 1 to couner</Button>
 			<Grid item container spacing = {1} xs ={12} md = {10}>
-				{(dataFromWeb != undefined) &&
-				Object.keys(dataFromWeb.data).map(id => {
-					const path = `http://ddragon.leagueoflegends.com/cdn/10.22.1/img/profileicon/${id}.png`
-					return (
-						<img src = {path} style = {{width: '50px'}}></img>
-					)
-				})
-				}
+				{(dataFromWeb =! undefined) 
+				? () => { return (<Typography>
+					{dataFromWeb.main.temp}
+				</Typography>)}
+				: () => {
+					return <Typography>waiting for data</Typography>
+				}}
+
 			</Grid>
 		</Grid>)
 }
