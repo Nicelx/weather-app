@@ -1,7 +1,6 @@
 .Container {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 82px 40px 40px;
+	display: flex;
+	flex-direction: column;
 	color: #fff;
 	background-color: #113278;
 }
@@ -12,9 +11,8 @@
 }
 .FirstRow {
 	width: 65vh;
-	display: grid;
+	display: flex;
 	margin: 0 20vw;
-	grid-template-columns: 200px 380px 146px;
 }
 .SecondRow {
 	background: hsla(0,0%,100%,.2);

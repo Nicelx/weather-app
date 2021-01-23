@@ -10,14 +10,14 @@ const Home = props => {
 	const [dataFromWeb, setDataFromWeb] = useState({})
 	const city = 'Moscow';
 	useEffect(()=> {
-		fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}&units=metric`)
-			.then(item => item.json())
-			.then(item => {
-				setDataFromWeb(item);
-				console.log(item);
-				;
-			})
-			.catch(err => console.log(err));
+		// fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApi}&units=metric`)
+		// 	.then(item => item.json())
+		// 	.then(item => {
+		// 		setDataFromWeb(item);
+		// 		console.log(item);
+		// 		;
+		// 	})
+		// 	.catch(err => console.log(err));
 	}, [])
 	
 	return (
@@ -26,14 +26,8 @@ const Home = props => {
 			<TextField></TextField>
 			<Button variant = 'contained' onClick = {onClickHandler}>Submit</Button>
 			<Button onClick = {props.onAdd}>let add 1 to couner</Button>
-			<Grid item container spacing = {1} xs ={12} md = {10}>
-				{(dataFromWeb =! undefined) 
-				? () => { return (<Typography>
-					{dataFromWeb.main.temp}
-				</Typography>)}
-				: () => {
-					return <Typography>waiting for data</Typography>
-				}}
+			<Grid>
+				лфлфлф
 
 			</Grid>
 		</Grid>)
