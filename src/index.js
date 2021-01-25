@@ -4,8 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { createStore } from "redux";
-import rootReducer from './reducers/rootReducer';
+
+import store from './store.js'
+
+// import { createStore } from "redux";
+// import rootReducer from './reducers/rootReducer';
 import { Provider } from "react-redux";
 
 // const store = createStore(rootReducer,
@@ -18,9 +21,9 @@ import { Provider } from "react-redux";
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			{/* <Provider store = {store}> */}
+			<Provider store = {store}>
 				<App />
-			{/* </Provider> */}
+			</Provider>
 		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")
