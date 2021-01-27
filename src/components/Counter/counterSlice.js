@@ -35,7 +35,12 @@ export const getData = () => dispatch => {
 		.then(response => response.json())
 		.then(json => dispatch(saveData(json)))
 }
-
+export const addAsync = (some) => dispatch => {
+	console.log('in addAsync')
+	setTimeout(() => {
+		dispatch(saveData(some))
+	},1000)
+}
 
 export const selectCount = (state) => state.counter.value;
 export const selectData = state => state.counter.data
