@@ -16,7 +16,7 @@ function App() {
 				{/* <Route path = '/' component = {Home}/> */}
 				{/* <Route path = '/' component = {ReduxPlaying}/> */}
 				{/* <Route path = '/' component = {ReduxPlaying3}/> */}
-				<Route path = '/' component = {Counter}/>
+				{/* <Route path = '/' component = {Counter}/> */}
 			</Switch>	
 			<Footer/>	
 		</>)

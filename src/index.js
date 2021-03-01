@@ -5,17 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
-import store from './store.js'
+import {store} from './reducers/store'
 
-// import { createStore } from "redux";
-// import rootReducer from './reducers/rootReducer';
+
 import { Provider } from "react-redux";
-
-// const store = createStore(rootReducer,
-// 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-
-// store.subscribe(() => console.log(store.getState()))
-
 
 
 ReactDOM.render(

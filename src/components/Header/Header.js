@@ -8,7 +8,7 @@ const Header = () => {
 		<div className = {classes.Container}>
 			<div className = {classes.FirstRowWrapper}>
 				<div className = {classes.FirstRow}>
-					<div>
+					<div className = {classes.LogoContainer}>
 						<img className = {classes.Logo}src = "https://www.pngitem.com/pimgs/m/340-3405968_the-weather-channel-weather-channel-black-logo-png.png" alt = "logo" />
 						<span>An IBM Business</span>
 					</div>
