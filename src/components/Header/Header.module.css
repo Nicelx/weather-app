@@ -25,13 +25,37 @@
 .LogoContainer span {
 	padding-left: 12px;
 }
+.InputContainer {
+	display: flex;
+	align-items: center;
+}
+.Input {
+	/* z-index: 1; */
+	color: #fff;
+	width: 380px;
+	height: 38px;
+	margin: 0 -35px;
+	padding-right: 40px;
+	background-color: var(--seconday);
+	outline: none;
+	border: none;
+	border-radius: 35px;
+	transition: 0.4s ease-in;
+	text-align: center;
+}
+.Input::placeholder {
+	color: #fff;
+}
 
-
+.SecondRowWrapper {
+	background-color: var(--seconday);
+	height: 40px;
+}
 .SecondRow {
-	background: hsla(0,0%,100%,.2);
 }
 .ThirdRow {
-	background: rgba(0,0,0,.4);
+	background: rgba(0, 0, 0, 0.4);
+	height: 40px;
 }
 
 .Logo {
