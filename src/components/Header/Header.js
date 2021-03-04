@@ -1,10 +1,16 @@
-import React from "react";
+import React,{ useState } from "react";
 import classes from "./Header.module.css";
 import LanguageIcon from "@material-ui/icons/Language";
-import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from "@material-ui/icons/Search";
 import NavLink from "react-router-dom";
 
 const Header = () => {
+	const [lang, setLang] = useState(false);
+
+	const toggleLang = () => {
+		setLang(prev => !prev)
+	}
+	
 	return (
 		<div className={classes.Container}>
 			<div className={classes.FirstRowWrapper}>
@@ -17,17 +23,24 @@ const Header = () => {
 						/>
 						<span>An IBM Business</span>
 					</div>
-					<div className = {classes.InputContainer}>
+					<div className={classes.InputContainer}>
 						<input
 							className={classes.Input}
 							type="text"
 							placeholder="Поиск по городу или индексу"
 						/>
-						<SearchIcon/>
+						<SearchIcon />
 					</div>
-					<div>
-						<LanguageIcon />
-						RU | {"\u00B0"}C
+
+					<div className={classes.TemperatureSelection}>
+						<button onClick = {toggleLang}>
+							<span>
+								<LanguageIcon />
+							</span>
+							<span>RU</span>|<span>{"\u00B0"}C</span>{" "}
+							<span>J</span>
+						</button>
+						{lang && <div className = {classes.Content}>content</div>}
 					</div>
 				</div>
 			</div>

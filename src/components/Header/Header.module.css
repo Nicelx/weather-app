@@ -30,7 +30,6 @@
 	align-items: center;
 }
 .Input {
-	/* z-index: 1; */
 	color: #fff;
 	width: 380px;
 	height: 38px;
@@ -45,6 +44,28 @@
 }
 .Input::placeholder {
 	color: #fff;
+}
+.TemperatureSelection button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 140px;
+	height: 28px;
+	background: rgba(0,0,0,0);
+	color: #fff;
+	border: none;
+}
+.TemperatureSelection span {
+	margin: 0 5px;
+}
+.Content {
+	position: absolute;
+	top: 80px;
+	left: 0;
+	width: 100vw;
+	height: 312px;
+	color: var(--text-dark);
+	background-color: #fff;
 }
 
 .SecondRowWrapper {
