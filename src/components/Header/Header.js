@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import classes from "./Header.module.css";
 import LanguageIcon from "@material-ui/icons/Language";
 import SearchIcon from "@material-ui/icons/Search";
@@ -8,9 +8,9 @@ const Header = () => {
 	const [lang, setLang] = useState(false);
 
 	const toggleLang = () => {
-		setLang(prev => !prev)
-	}
-	
+		setLang((prev) => !prev);
+	};
+
 	return (
 		<div className={classes.Container}>
 			<div className={classes.FirstRowWrapper}>
@@ -33,14 +33,44 @@ const Header = () => {
 					</div>
 
 					<div className={classes.TemperatureSelection}>
-						<button onClick = {toggleLang}>
+						<button onClick={toggleLang}>
 							<span>
 								<LanguageIcon />
 							</span>
 							<span>RU</span>|<span>{"\u00B0"}C</span>{" "}
 							<span>J</span>
 						</button>
-						{lang && <div className = {classes.Content}>content</div>}
+						{lang && (
+							<div className={classes.ContentWrapper}>
+								<div className={classes.Content}>
+									<div className={classes.ContentSwitcher}>
+										<span
+											className={
+												classes.ContentSwitcherActive
+											}
+										>
+											{"\u00B0"}C
+										</span>{" "}
+										| <span>{"\u00B0"}F</span>
+									</div>
+									<div className={classes.ContentItem}>
+										выпадашка
+									</div>
+									<div className={classes.ContentItem}>
+										выпадашка
+									</div>
+									<div className={classes.ContentItem}>
+										выпадашка
+									</div>
+									<div className={classes.ContentItem}>
+										выпадашка
+									</div>
+									<div className={classes.ContentItem}>
+										выпадашка
+									</div>
+								</div>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>

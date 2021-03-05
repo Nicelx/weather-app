@@ -1,7 +1,10 @@
 :root {
   --primary:rgb(17, 50, 120);
-  --seconday: rgb(65, 91, 147);
+  --secondary: rgb(65, 91, 147);
+  --gray: #6f7585;
   --primary-rgb:  17, 50, 120;
+
+  --temperature-active : #1b4de4;
   --text-dark : #2b2b2b;
 }
 
