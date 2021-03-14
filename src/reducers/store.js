@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../components/Counter/counterSlice';
+
+const tempReducer = (state = {
+	initialState : 'init'
+}, action ) => {
+	return state;
+}
 
 export const store =  configureStore({
 	reducer: {
-	  counter: counterReducer,
+	  temp: tempReducer,
 	},
   });
   
