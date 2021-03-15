@@ -1,19 +1,13 @@
 import React from 'react';
-import { useDropOpen } from './useDropOpen';
-import { useState } from 'react';
+import classes from './dropLanguages.module.css';
 
 export const DropLanguages = (props) => {
+	cls = [classes.DropLanguage];
 
-	const [open, setOpen] = useDropOpen();
-
-	const toggle = () => {
-		console.log('toggled')
-		setOpen(!open);
-	}
+	
 	return (
 		<>
-			<button onClick = {toggle}>{props.caption}</button>
-			<div >
+			<div className = {cls}>
 				{props.children}
 			</div>
 		</>
