@@ -4,7 +4,7 @@ import LanguageIcon from "@material-ui/icons/Language";
 import SearchIcon from "@material-ui/icons/Search";
 import NavLink from "react-router-dom";
 
-import { DropLanguages } from './../DropLanguages/DropLanguages';
+import { DropLanguagesList } from './../DropLanguages/DropLanguagesList';
 
 const Header = () => {
 	const [lang, setLang] = useState(false);
@@ -55,21 +55,8 @@ const Header = () => {
 										</span>{" "}
 										| <span>{"\u00B0"}F</span>
 									</div>
-									<DropLanguages>
-										contentssss
-									</DropLanguages>
-									<DropLanguages>
-										contentssss
-									</DropLanguages>
-									<DropLanguages>
-										contentssss
-									</DropLanguages>
-									<div className={classes.ContentItem}>
-										выпадашка
-									</div>
-									<div className={classes.ContentItem}>
-										выпадашка
-									</div>
+									<DropLanguagesList/>
+									
 								</div>
 							</div>
 						)}
