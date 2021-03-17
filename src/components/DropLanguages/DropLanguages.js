@@ -11,7 +11,9 @@ export const DropLanguages = (props) => {
 		<>	
 			<button onClick = {titleOnClickHandler}>{props.title}</button>
 			<div className = {cls}>
-				{props.children}
+				<ul>
+					{props.children.map(item => (<a>{item}</a>))}
+				</ul>
 			</div>
 		</>
 	);
