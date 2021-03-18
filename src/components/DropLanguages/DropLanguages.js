@@ -6,12 +6,12 @@ export const DropLanguages = (props) => {
 	const titleOnClickHandler = (index) => {
 		props.setActiveIndex(3);
 	}
-	
+	if (props.open) cls.push(classes.DropOpen);
 	return (
 		<>	
 			<button onClick = {titleOnClickHandler}>{props.title}</button>
-			<div className = {cls}>
-				<ul>
+			<div className = {cls.join(' ')}>
+				<ul className = {classes.List}>
 					{props.children.map(item => (<a>{item}</a>))}
 				</ul>
 			</div>
