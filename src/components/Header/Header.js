@@ -13,6 +13,10 @@ const Header = () => {
 		setLang((prev) => !prev);
 	};
 
+	const paperClass = [classes.TemperatureSelectionPaper]
+	if (lang) paperClass.push(classes.TemperatureSelectionPaperActive);
+
+
 	return (
 		<div className={classes.Container}>
 			<div className={classes.FirstRowWrapper}>
@@ -35,7 +39,8 @@ const Header = () => {
 					</div>
 
 					<div className={classes.TemperatureSelection}>
-						<button onClick={toggleLang}>
+						<div onClick = {toggleLang} className = {paperClass.join(' ')}></div>
+						<button className = {classes.TemperatureSelectionButton}onClick={toggleLang}>
 							<span>
 								<LanguageIcon />
 							</span>

@@ -45,7 +45,22 @@
 .Input::placeholder {
 	color: #fff;
 }
-.TemperatureSelection button {
+.TemperatureSelection:active {
+	outline: 1px solid #fff;
+}
+.TemperatureSelectionPaper {
+	position: fixed;
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.TemperatureSelectionPaperActive {
+	display: block;
+}
+.TemperatureSelectionButton {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -66,7 +81,8 @@
 	top: 80px;
 	left: 0;
 	width: 100vw;
-	height: 312px;
+	/* height: 312px; */
+	padding: 10px 15px;
 	color: var(--text-dark);
 	background-color: #fff;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);

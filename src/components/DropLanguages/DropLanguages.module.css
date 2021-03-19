@@ -4,3 +4,19 @@
 .DropOpen {
 	display: block;
 }
+.DropButton {
+	width: 1280px;
+	padding: 10px 30px;
+	color: var(--text-dark);
+	background-color: #fff;
+	border: none;
+	border-top: 1px solid rgba(0,0,0,0.3);
+	text-align: start;
+	font-family: Roboto sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+}
+.DropButton:hover {
+	color: var(--temperature-active);
+}
